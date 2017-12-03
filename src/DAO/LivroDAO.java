@@ -6,6 +6,7 @@
 package DAO;
 import Model.Livro;
 import Model.Usuario;
+import java.util.List;
 import javax.persistence.*;
 /**
  *
@@ -15,8 +16,8 @@ public class LivroDAO {
     private EntityManagerFactory factory;
     private EntityManager manager;
     
-    public LivroDAO(){
-        factory = Persistence.createEntityManagerFactory("SistemaBibliotecaPU");
+    public LivroDAO(String persist){
+        factory = Persistence.createEntityManagerFactory(persist);
         manager = factory.createEntityManager();
 
     }
@@ -28,6 +29,7 @@ public class LivroDAO {
         System.out.println("Inserção realizada com sucesso!");
         
     }
+    
     public Livro buscaLivro(int RA){
     
         Livro al = new Livro();
@@ -35,6 +37,13 @@ public class LivroDAO {
        
         return al; 
     }
+     public List<Livro> listaLivros(){
+        
+List<Livro> livroList = manager.createQuery("SELECT t FROM Livro AS t",Livro.class).getResultList();
+
+
+    return livroList;
+}
     public void removeLivro(int id){
         Livro al = new Livro();
         

@@ -5,19 +5,19 @@
  */
 package View;
 
-import DAO.UsuarioDAO;
-import Model.Usuario;
+import DAO.LivroDAO;
+import Model.Livro;
 
 /**
  *
- * @author internet
+ * @author Bruno Pinheiro Rocha
  */
-public class CadUsuario extends javax.swing.JFrame {
+public class CadLivro extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadUsuario
+     * Creates new form CadLivro
      */
-    public CadUsuario() {
+    public CadLivro() {
         initComponents();
     }
 
@@ -30,27 +30,31 @@ public class CadUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        nomeForm = new javax.swing.JTextField();
+        qtdForm = new javax.swing.JTextField();
+        autorForm = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        statusForm = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        editoraForm = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        telefoneForm = new javax.swing.JTextField();
-        userForm = new javax.swing.JTextField();
-        cpfForm = new javax.swing.JTextField();
-        idadeForm = new javax.swing.JTextField();
-        endForm = new javax.swing.JTextField();
-        emailForm = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        senhaForm = new javax.swing.JTextField();
+        anoForm = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("Idade");
+        jLabel2.setText("Autor");
+
+        statusForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusFormActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Sair");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -59,23 +63,11 @@ public class CadUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("email");
+        jLabel3.setText("Editora");
 
-        jLabel7.setText("Cadastro de Usuário");
+        jLabel1.setText("Nome");
 
-        jLabel4.setText("Telefone");
-
-        jLabel5.setText("CPF");
-
-        jLabel6.setText("Endereço");
-
-        endForm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                endFormActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Usuario");
+        jLabel7.setText("Cadastro de Livros");
 
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +76,11 @@ public class CadUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Senha");
+        jLabel4.setText("Ano");
+
+        jLabel5.setText("Quantidade");
+
+        jLabel6.setText("Status");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,7 +89,7 @@ public class CadUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80))
             .addGroup(layout.createSequentialGroup()
@@ -104,28 +100,27 @@ public class CadUsuario extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(endForm, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(statusForm, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel8))
+                                    .addComponent(jLabel4))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(idadeForm, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cpfForm, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(emailForm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                                        .addComponent(userForm, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(senhaForm, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(telefoneForm)))))
+                                    .addComponent(editoraForm)
+                                    .addComponent(autorForm)
+                                    .addComponent(nomeForm, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(anoForm, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(qtdForm)
+                                        .addGap(167, 167, 167))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(146, 146, 146)
                         .addComponent(jLabel7)))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,51 +129,46 @@ public class CadUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomeForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(senhaForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idadeForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(autorForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editoraForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(telefoneForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(anoForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(cpfForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(qtdForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(endForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(statusForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void endFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endFormActionPerformed
+    private void statusFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusFormActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_endFormActionPerformed
+    }//GEN-LAST:event_statusFormActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        if(userForm.getText().isEmpty() || idadeForm.getText().isEmpty() || telefoneForm.getText().isEmpty() || emailForm.getText().isEmpty() ||
-                cpfForm.getText().isEmpty() ) {
+          if(nomeForm.getText().isEmpty() || autorForm.getText().isEmpty() || editoraForm.getText().isEmpty() || anoForm.getText().isEmpty() ||
+                qtdForm.getText().isEmpty() || statusForm.getText().isEmpty() ) {
             
             ErrorLogin err = new ErrorLogin();
             err.run("Preencher todos os campos");
@@ -186,43 +176,34 @@ public class CadUsuario extends javax.swing.JFrame {
         }
         else{
             
-        UsuarioDAO alDAO = new UsuarioDAO("SistemaBibliotecaPU2");
-        Usuario al = new Usuario();
+        LivroDAO livDAO = new LivroDAO("SistemaBibliotecaPU2");
+        Livro al = new Livro();
         
-        al.setNomeCompleto(userForm.getText());
-        al.setIdade(Integer.parseInt(idadeForm.getText()));
-        al.setTelefone(Integer.parseInt(telefoneForm.getText()));
-        al.setEmail(emailForm.getText());
-        al.setCPF(cpfForm.getText());
+        
+        al.setNome(nomeForm.getText());
+        al.setAutor(autorForm.getText());
+        al.setEditora(editoraForm.getText());
+        al.setAno(Integer.parseInt(anoForm.getText()));
+        al.setQtd(Integer.parseInt(qtdForm.getText()));
+        al.setStatus(Integer.parseInt(statusForm.getText()));
        
-        alDAO.gravaUsuario(al);
+        livDAO.gravaLivro(al);
         ErrorLogin ok = new ErrorLogin();
         ok.setVisible(true);
         ok.run("Cadastro realizada com sucesso");
-        
-      
-            
-            
-        }
-            
-            
-        
-        
-    
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField cpfForm;
-    private javax.swing.JTextField emailForm;
-    private javax.swing.JTextField endForm;
-    private javax.swing.JTextField idadeForm;
+    private javax.swing.JTextField anoForm;
+    private javax.swing.JTextField autorForm;
+    private javax.swing.JTextField editoraForm;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -232,9 +213,8 @@ public class CadUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField senhaForm;
-    private javax.swing.JTextField telefoneForm;
-    private javax.swing.JTextField userForm;
+    private javax.swing.JTextField nomeForm;
+    private javax.swing.JTextField qtdForm;
+    private javax.swing.JTextField statusForm;
     // End of variables declaration//GEN-END:variables
 }

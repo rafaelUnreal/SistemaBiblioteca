@@ -23,15 +23,16 @@ public class SistemaBiblioteca {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        UsuarioDAO alDAO = new UsuarioDAO();
+        UsuarioDAO alDAO = new UsuarioDAO("SistemaBibliotecaPU");
         Usuario al = new Usuario();
         al.setNomeCompleto("Rafael Pinheiro Rocha");
         al.setRA(2216);
         al.setSenha("123456");
+        al.setEmail("rafaelp921@gmail.com");
         alDAO.gravaUsuario(al);
         Usuario al2;
         //al2 = alDAO.buscaUsuario(1);
-       // System.out.println("Saida");
+               // System.out.println("Saida");
        // System.out.println(al2.getNomeCompleto());
         
 

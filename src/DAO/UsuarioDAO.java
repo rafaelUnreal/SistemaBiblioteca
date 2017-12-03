@@ -5,6 +5,7 @@
  */
 package DAO;
 import Model.Usuario;
+import java.util.List;
 import javax.persistence.*;
 import org.hibernate.*;
 /**
@@ -15,10 +16,13 @@ public class UsuarioDAO {
     
     private EntityManagerFactory factory;
     private EntityManager manager;
+    private Session session;
     
-    public UsuarioDAO(){
-        factory = Persistence.createEntityManagerFactory("SistemaBibliotecaPU");
+    public UsuarioDAO(String persist){
+        factory = Persistence.createEntityManagerFactory(persist);
         manager = factory.createEntityManager();
+       
+        
 
     }
     public void gravaUsuario(Usuario al){
@@ -27,16 +31,24 @@ public class UsuarioDAO {
         manager.getTransaction().commit();
         //PARA DEBUG
         System.out.println("Inserção realizada com sucesso!");
+     
         
     }
     public Usuario buscaUsuario(int RA){
     
-       
-        
+    
         return manager.find(Usuario.class,RA);
-       
+   
      
     }
+    public List<Usuario> listaUsuarios(){
+        
+List<Usuario> userList = manager.createQuery("SELECT t FROM Usuario AS t",Usuario.class).getResultList();
+
+
+    return userList;
+}
+    
     public void removeUsuario(int RA){
         Usuario al = new Usuario();
         
@@ -45,6 +57,7 @@ public class UsuarioDAO {
         manager.getTransaction().begin();
         manager.remove(al);
         manager.getTransaction().commit();
+ 
         
     }
     
@@ -53,6 +66,7 @@ public class UsuarioDAO {
         manager.getTransaction().begin();
         manager.merge(al);
         manager.getTransaction().commit();
+
         
     }
     

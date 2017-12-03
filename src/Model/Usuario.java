@@ -15,6 +15,7 @@ import javax.persistence.*;
 public class Usuario {
  
     @Id
+    @Column(name="usuario_id")
     @GeneratedValue
     private int id;
     private String nomeCompleto;

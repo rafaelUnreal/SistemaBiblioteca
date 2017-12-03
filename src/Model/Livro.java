@@ -16,6 +16,7 @@ import javax.persistence.*;
 public class Livro {
     @Id
     @GeneratedValue
+    @Column(name="livro_id")
     private int id;
     private String nome;
     private String autor;
