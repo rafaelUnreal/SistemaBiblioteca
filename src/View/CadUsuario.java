@@ -190,10 +190,12 @@ public class CadUsuario extends javax.swing.JFrame {
         Usuario al = new Usuario();
         
         al.setNomeCompleto(userForm.getText());
+        al.setSenha(senhaForm.getText());
         al.setIdade(Integer.parseInt(idadeForm.getText()));
         al.setTelefone(Integer.parseInt(telefoneForm.getText()));
         al.setEmail(emailForm.getText());
         al.setCPF(cpfForm.getText());
+        al.setEndereco(endForm.getText());
        
         alDAO.gravaUsuario(al);
         ErrorLogin ok = new ErrorLogin();
